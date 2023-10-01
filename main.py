@@ -21,32 +21,29 @@ activities = ["go for a walk", "watch your favorite show", "go see a movie", "dr
                   "visit the library", "try a new restaurant"]
 
 # Functions
-# view list: display the list
+# Display the list
 def viewList ():
     Label(root, text=activities)
-# surprise me: don't display the list
-# spin the wheel: select a random item the chosen list and display the result
-
-# Display the result
+# Randomize the array and display the result in a pop up window
 def randomizer():
     result = random.choice(activities)
     messagebox.showinfo("Congratulations! You should " + result + "!")
 
 
 # Buttons
-view =Button(root, text="See the list", command=viewList)
+seeTheList =Button(root, text="See the list", command=viewList)
 surpriseMe = Button(root, text="Surprise me", command=randomizer)
 spin = Button(root, text="Spin the Wheel!", command=randomizer)
 exit = Button(root, text="Exit", command=root.quit)
 
 
 # Widget Placement
-welcome.grid(row=0, column=2)
-title.grid(row=1, column=2)
-viewOrSurprise.grid(row=2, column=2)
-view.grid(row=3, column=2)
-# surpriseMe.grid(row=3, column=2)
-exit.grid(row=8, column=2)
+welcome.grid(row=0, column=1)
+title.grid(row=1, column=1)
+viewOrSurprise.grid(row=2, column=1)
+seeTheList.grid(row=3, column=0)
+surpriseMe.grid(row=3, column=2)
+exit.grid(row=8, column=1)
 
 
 root.mainloop()
