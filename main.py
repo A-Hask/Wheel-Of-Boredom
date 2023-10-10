@@ -2,7 +2,6 @@ from tkinter import *
 import random
 from PIL import ImageTk, Image
 
-
 root = Tk()
 root.title("WHEEL! OF! BOREDOM!")
 
@@ -59,7 +58,7 @@ def randomizer():
     announcement = Label(randomize, text="I think that you should... " + result + "!")
     announcement.pack()
 
-    back = Button(randomize, text="Back to home page", command=randomize.destroy )
+    back = Button(randomize, text="Back to home page", command=randomize.destroy)
     back.pack(padx=5, pady=5)
 
 # Buttons
