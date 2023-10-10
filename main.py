@@ -2,32 +2,46 @@ from tkinter import *
 import random
 from PIL import ImageTk, Image
 
+
 root = Tk()
 root.title("WHEEL! OF! BOREDOM!")
+
+# Access necessary images
+img=PhotoImage(file="spinnerwheel.jpg")
+
+
+
+# image1 = Image.open("/images/wheel.png")
+# image1=image1.resize((50,50), Image.ANTIALIAS)
 
 # Widgets
 welcome = Label(root, text="Welcome to the")
 title = Label(root, text="Wheel of Boredom!")
 viewOrSurprise = Label(root, text="Would you like to view the list before you spin?")
 
-# List
+# Activity List
 activities = ["go for a walk", "watch your favorite show", "go see a movie", "draw something", "play a video game",
               "take a bubble bath", "go for a drive", "play with a pet", "chat with a friend", "have a tea party",
               "complete one task that you've been putting off", "listen to music", "try a new recipe",
               "visit the library", "try a new restaurant", "take a nap", "write a poem", "visit a cafe",
               "go to an ice cream shop", "start learning a new hobby", "organize your clothes", "build a fort"]
 
+
 # Functions
+
 # Popup window to display the list
 def viewList():
     activityList = Toplevel()
     activityList.title("Activity List!")
     activityList.geometry("300x600")
+
     words = Label(activityList, text="Here is the list of activities:")
     words.pack()
+
     for choice in activities:
         actList = Label(activityList, text=str(choice))
         actList.pack()
+
     back = Button(activityList, text="Back to homepage", command=activityList.destroy, padx=5, pady=5)
     back.pack(padx=5, pady=5)
 
@@ -35,9 +49,9 @@ def viewList():
 def randomizer():
     randomize = Toplevel()
     randomize.title("Here is your Result!")
-    randomize.geometry("300x100")
-    result = random.choice(activities)
+    randomize.geometry("400x100")
 
+    result = random.choice(activities)
     announcement = Label(randomize, text="I think that you should... " + result + "!")
     announcement.pack()
 
