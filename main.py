@@ -6,13 +6,16 @@ from PIL import ImageTk, Image
 root = Tk()
 root.title("WHEEL! OF! BOREDOM!")
 
-# Access necessary images
-img=PhotoImage(file="spinnerwheel.jpg")
+# upload images for icons
+ico1 = Image.open('spinnerwheel.jpg')
+ico2 = Image.open('list.jpg')
+ico3 = Image.open('trophy.jpg')
+wheel = ImageTk.PhotoImage(ico1)
+list = ImageTk.PhotoImage(ico2)
+trophy = ImageTk.PhotoImage(ico3)
 
-
-
-# image1 = Image.open("/images/wheel.png")
-# image1=image1.resize((50,50), Image.ANTIALIAS)
+# Change root icon
+root.wm_iconphoto(False, wheel)
 
 # Widgets
 welcome = Label(root, text="Welcome to the")
@@ -28,10 +31,10 @@ activities = ["go for a walk", "watch your favorite show", "go see a movie", "dr
 
 
 # Functions
-
 # Popup window to display the list
 def viewList():
     activityList = Toplevel()
+    activityList.wm_iconphoto(False, list)
     activityList.title("Activity List!")
     activityList.geometry("300x600")
 
@@ -48,6 +51,7 @@ def viewList():
 # Randomize the array and display the result in a pop up window
 def randomizer():
     randomize = Toplevel()
+    randomize.wm_iconphoto(False, trophy, text="trophy")
     randomize.title("Here is your Result!")
     randomize.geometry("400x100")
 
