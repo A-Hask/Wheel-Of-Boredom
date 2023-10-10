@@ -51,7 +51,7 @@ def viewList():
 # Randomize the array and display the result in a pop up window
 def randomizer():
     randomize = Toplevel()
-    randomize.wm_iconphoto(False, trophy, text="trophy")
+    randomize.wm_iconphoto(False, trophy)
     randomize.title("Here is your Result!")
     randomize.geometry("400x100")
 
